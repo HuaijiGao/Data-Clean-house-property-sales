@@ -123,3 +123,46 @@ Note that:
 - for the y coordinate, the further to the right of the triangle the higher the y value.
 
 Given the inputs of coordinates, width and height, and the resulting geo rectangle, the **get_avg_price_by_georegion** function should return the average price of all the sold properties whose geolocation coordinates fall within the boundaries (including the edges) of the geo rectangle. Return None if there is no property within the region.
+
+## Quest 4: JSON to Python and Back
+
+JSON is a widely used syntax for storing and exchanging data. A JSON object is written in key/value pairs, and a set of objects is surrounded by curly braces {}. For example, such a JSON data structure would look like:
+```
+{"key1": "string1", "key2": number1, "key3": number2}
+```
+Notice that keys are always enclosed in "", but for values, strings are enclosed in "" and numbers are not.
+
+Regarding our Melbourne real estate sales data, an example record would be represented in JSON as:
+```
+{'Address': '85 Turner St',
+ 'Bedroom': 2,
+ 'Car': 1,
+ 'CouncilArea': 'Yarra',
+ 'Date': '3/12/2016',
+ 'Landsize': 202,
+ 'Latitude': -37.7996,
+ 'Longitude': 144.9984,
+ 'Postcode': 3067,
+ 'Price': 1480000,
+ 'Regionname': 'Northern Metropolitan',
+ 'Rooms': 2,
+ 'Seller': 'Biggin',
+ 'Suburb': 'Abbotsford'}
+``` 
+To represent a collection of records, we separate each record by a comma and wrap them around square brackets []. You can read more about JSON here: https://www.w3schools.com/js/js_json_intro.asp
+
+For this question you will write a function **provide_realestate_info(main_data, queried_properties)**, where the input **queried_properties** is a JSON structure. This input structure contains the core address information (Suburb, Address and Postcode) for a set of properties and looks like the following example:
+```
+[
+ {"Suburb": "Rosanna", "Address": "7 Hylton Cr", "Postcode": 3084},
+ {"Suburb": "Preston", "Address": "3/152 Tyler St", "Postcode": 3072},
+ {"Suburb": "Epping", "Address": "19 Houston St", "Postcode": 3076}
+]
+```
+The function **provide_realestate_info** will return a JSON-style dictionary structure that adds more information to the input structure as follows. For each property in this input set, the **provide_realestate_info** function should search the main dataset for a record of this property. If the record for a property is found, then add the key/value elements for the fields *Price, Bedrooms and Landsize*. If the input property record is not found, then remove it from the set.
+
+Moreover, there could be some JSON input entries that have street names but no number, such as
+```
+{"Suburb": "Rosanna", "Address": "Hylton Cr", "Postcode": 3084}.
+```
+In this case, if a **single** match with "Hylton Cr" could be found, then that property information would be returned. However, if the CSV data set had **more than one address** at "Hylton Cr", then no information for that JSON entry would be returned because there is no way to decide which of the properties it is.
