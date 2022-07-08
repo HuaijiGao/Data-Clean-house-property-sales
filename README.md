@@ -1,4 +1,4 @@
-# Data-Analysis-house-property-sales
+# Data-Analysis-of-house-property-sales
 Data analysis of house/property sales in metropolitan Melbourne from 2016 to 2017
 
 This project is handling a dataset of house/property sales in metropolitan Melbourne during the years 2016 and 2017.
