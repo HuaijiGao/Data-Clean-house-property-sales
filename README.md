@@ -41,7 +41,7 @@ You have been provided with CSV files containing data about real estate sales in
 
 There are a few particular errors in this data:
 - Typos have occurred in the Price column, resulting in some non-numeric values.
-- People have entered Regionname values that are no longer current, valid region names. The valid regions are listed in a list called VALID_REGION_NAMES, which is given to you.
+- People have entered Regionname values that are no longer current, valid region names. The valid regions are listed in a list called **VALID_REGION_NAMES**, which is given to you.
 - Some people have formatted the sale date incorrectly, such that it is either not of the form dd/mm/yyyy or contains invalid dates, such as 31/11/2016. If a date does not fall under the year 2016 or the year 2017, it is also considered invalid.
 - Some Postcode values are not valid Melbourne postcode values: they need to be 4-digit integers that start with 3.
 
