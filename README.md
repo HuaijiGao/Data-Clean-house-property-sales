@@ -93,3 +93,17 @@ In cases where an incorrect string has the same similarity score with two or mor
 Sim("Moreland", "Meorln") = Sim("Melbourne", "Meorln") = 0.75
 
 Since the program has no further way of deciding between the two, it just replaces "Meorln" with None.
+
+## Quest 2: Sales Statistics
+Write a function called **sale_stats_by_council(data, start_date, end_date)** which takes three arguments: a dictionary of clean data in the format returned by read_data, a start date of the form dd/mm/yyyy, and an end date of the form dd/mm/yyyy (both inclusive). You can assume date inputs are valid.
+
+For each council area, the function calculates the following four statistics within the start_date to end_date range:
+
+- average sale Price, rounded to the closest whole number.
+- sum total Price
+- minimum instance of Price
+- maximum instance of Price
+
+If the start date is greater than the end date the function should return -1. You can use Python date functionality to compare two dates. Googling will help you to find ways that this can be done.
+
+The result is a dictionary with this information, as shown in the examples below. If a council does not have this information present in the data, then the values for that council are set to None.
