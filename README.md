@@ -1,5 +1,5 @@
-# Data-Clean-house-property-sales
-Data cleaning of house/property sales in metropolitan Melbourne from 2016 to 2017
+# Data-Analysis-house-property-sales
+Data analysis of house/property sales in metropolitan Melbourne from 2016 to 2017
 
 This project is handling a dataset of house/property sales in metropolitan Melbourne during the years 2016 and 2017.
 
@@ -107,3 +107,19 @@ For each council area, the function calculates the following four statistics wit
 If the start date is greater than the end date the function should return -1. You can use Python date functionality to compare two dates. Googling will help you to find ways that this can be done.
 
 The result is a dictionary with this information, as shown in the examples below. If a council does not have this information present in the data, then the values for that council are set to None.
+
+## Quest 3: Sales by Geolocation
+For this question you are to write a function **get_avg_price_by_georegion(data, coordinates, width, height)**. The following three input parameters of this function do the following:
+- **coordinates** is a tuple of the form (latitude, longitude), where latitude and longitude are float numbers representing geolocation positions.
+- **width** is the width in degrees (float number) of a rectangle whose central point is (latitude, longitude)
+- **height** is the height in degrees (float number) of a rectangle whose central point is (latitude, longitude)
+
+So, for example, suppose the geolocation coordinates of the point were (-37.840935, 144.946457), and the rectangle width = 0.2 and the rectangle height = 0.1. In that case we have a rectangle with the following geolocation coordinates that looks like this:
+![geolocation_sample](https://groklearning-cdn.com/problems/HLsuZzTDLX8fRRPRBsQ8T9/geolocation_square.png)
+
+Note that:
+- for the coordinates (x, y), height changes the x value and width changes the y value.
+- for the x coordinate, the further up on the rectangle the higher the x value.
+- for the y coordinate, the further to the right of the triangle the higher the y value.
+
+Given the inputs of coordinates, width and height, and the resulting geo rectangle, the **get_avg_price_by_georegion** function should return the average price of all the sold properties whose geolocation coordinates fall within the boundaries (including the edges) of the geo rectangle. Return None if there is no property within the region.
